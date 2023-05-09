@@ -3,14 +3,9 @@ import {useState, useRef, useEffect} from "react";
 
 export const Counter = () => {
     const [count, setCount] = useState(0);
-    // const ref = useRef(0);
     return(
         <>
         {
-            // <p>{count}</p>
-            // <button onClick={() => setCount((prev) => prev + 1)}>+1</button>
-        //     <p>{ref.current}</p>
-        //     <button onClick={() => (ref.current= 100)}>+1</button>
         <div>
             <p>{count}</p>
             <button onClick={() => {
@@ -37,7 +32,6 @@ export const ToDoList = () => {
             taskName: taskName,
             state: false
         }])
-        // set_filTask(tasks.filter(x => true))
     };
 
     const [fil_tasks, set_filTask] = useState<Task[]>([]);
@@ -48,14 +42,8 @@ export const ToDoList = () => {
             state: state
         }])
     };
-    // const filter_tasks = (filter: filterType) => {
-    //     set_all_filTask(tasks.filter(x => x.state))
-    // }
-    
-    
 
     function changeState(e: any){
-        // console.log(e.target.checked)
         for(const task of tasks){
             console.log(task.id + " " + e.target.id)
             if(task.id.toString() === e.target.id.toString()){
@@ -89,16 +77,6 @@ export const ToDoList = () => {
                 <button onClick={() => {
                     set_filTask(tasks.filter(x => x.state))
                 }}>show Done</button>
-                
-                {/* <ul>
-                    {tasks.map(task => (
-                        <div>
-                            <li key={task.id}>{"id:" + task.id} {task.taskName}  state:{task.state.toString() }
-                            <input type="checkbox" name="" id={task.id.toString()} onChange={changeState} />
-                            </li>
-                        </div>
-                    ))}
-                </ul> */}
 
                 <ul>
                     {fil_tasks.map(task => (
